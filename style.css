@@ -1,0 +1,87 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: #EAEAEA;
+}
+
+a {
+    color: #008CBA;
+    text-decoration: none;
+}
+
+.header{
+    display: flex;
+    background-color: #333333;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoText{
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+.menu a{
+  color: #008CBA;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #008CBA;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.19s ease;
+}
+
+.menu a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.textContact, .listContact{
+    color: #008CBA;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.listContact{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.textContact{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.contact{
+    margin-top: 10000px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+}
