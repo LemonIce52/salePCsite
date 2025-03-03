@@ -4,17 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <script src="scripts.js"></script>
     <title>Главная страница</title>
 </head>
 <body>
     <section class="header">
-        <a class="logoText" href="#">QuantumForge</a>
+        <a class="logoText" href="index.html">QuantumForge</a>
         <ul class="menu">
-            <li><a  href="#">О нас</a></li>
-            <li><a  href="#">Каталог</a></li>
-            <li><a  href="#">Услуги</a></li>
+            <li><a  href="#catalog">Каталог</a></li>
+            <li><a  href="#service">Услуги</a></li>
+            <li><a  href="#info">О нас</a></li>
             <li><a  href="#cont">Контакты</a></li>
         </ul>
+    </section>
+
+    <section id="catalog" class="catalog">
+        <div class="filter">
+            <button class="filter-item" onclick="filterProducts('all')">Всё</button>
+            <button class="filter-item" onclick="filterProducts('playing')">Игровой</button>
+            <button class="filter-item" onclick="filterProducts('office')">Офисный</button>
+            <button class="filter-item" onclick="filterProducts('home')">Для дома</button>
+            <button class="filter-item" onclick="filterProducts('complect')">Комплектующие</button>
+        </div>
+        <div class="content">
+            <div class="product playing">
+                <div class="product-image">
+                    <a href="#"><img src="Images/play_pc_1.png" alt="playing pc 1"></a>
+                </div>
+                <p class="product-title"><a href="#">Titan X-Gamer</a></p>
+                <p class="product-desc"><a href="#">Высокопроизводительный ПК с RTX 4070 и Ryzen 7 для максимального FPS.</a></p>
+                <p class="product-price"><a href="#">Цена: 180000 руб.</a></p>
+            </div>
+            <div class="product playing">
+                <div class="product-image">
+                    <a href="#"><img src="Images/play_pc_2.png" alt="playing pc 2"></a>
+                </div>
+                <p class="product-title"><a href="#">Shadow Beast Pro</a></p>
+                <p class="product-desc"><a href="#">Сверхбыстрая машина с Intel i7 и RTX 4060 Ti для плавного гейминга.</a></p>
+                <p class="product-price"><a href="#">Цена: 150000 руб.</a></p>
+            </div>
+            <div class="product playing">
+                <div class="product-image">
+                    <a href="#"><img src="Images/play_pc_3.png" alt="playing pc 3"></a>
+                </div>
+                <p class="product-title"><a href="#">Red Dragon X</a></p>
+                <p class="product-desc"><a href="#">Оптимальное решение с Ryzen 5 и RTX 3060 для Full HD-гейминга.</a></p>
+                <p class="product-price"><a href="#">Цена: 120000 руб.</a></p>
+            </div>
+            <div class="product office">
+                <div class="product-image">
+                    <a href="#"><img src="Images/office_pc_1.png" alt="office pc 1"></a>
+                </div>
+                <p class="product-title"><a href="#">WorkPro S10</a></p>
+                <p class="product-desc"><a href="#">Компактный и тихий ПК на базе Intel i5 для офисных задач.</a></p>
+                <p class="product-price"><a href="#">Цена: 70000 руб.</a></p>
+            </div>
+            <div class="product office">
+                <div class="product-image">
+                    <a href="#"><img src="Images/office_pc_2.png" alt="office pc 2"></a>
+                </div>
+                <p class="product-title"><a href="#">OfficeMaster 500</a></p>
+                <p class="product-desc"><a href="#">Энергоэффективный компьютер с SSD для быстрой работы.</a></p>
+                <p class="product-price"><a href="#">Цена: 60000 руб.</a></p>
+            </div>
+            <div class="product office">
+                <div class="product-image">
+                    <a href="#"><img src="Images/office_pc_3.png" alt="office pc 3"></a>
+                </div>
+                <p class="product-title"><a href="#">Business Cube</a></p>
+                <p class="product-desc"><a href="#">Надежный и производительный офисный ПК с Intel i3.</a></p>
+                <p class="product-price"><a href="#">Цена: 50000 руб.</a></p>
+            </div>
+            <div class="product home">
+                <div class="product-image">
+                    <a href="#"><img src="Images/home_pc_1.png" alt="home pc 1"></a>
+                </div>
+                <p class="product-title"><a href="#">HomeStation 3000</a></p>
+                <p class="product-desc"><a href="#">Универсальный ПК для интернета, фильмов и работы.</a></p>
+                <p class="product-price"><a href="#">Цена: 80000 руб.</a></p>
+            </div>
+            <div class="product home">
+                <div class="product-image">
+                    <a href="#"><img src="Images/home_pc_2.png" alt="home pc 2"></a>
+                </div>
+                <p class="product-title"><a href="#">Family Box</a></p>
+                <p class="product-desc"><a href="#">Бюджетное решение для учебы и мультимедиа.</a></p>
+                <p class="product-price"><a href="#">Цена: 60000 руб.</a></p>
+            </div>
+            <div class="product home">
+                <div class="product-image">
+                    <a href="#"><img src="Images/home_pc_3.png" alt="home pc 3"></a>
+                </div>
+                <p class="product-title"><a href="#">MediaCenter One</a></p>
+                <p class="product-desc"><a href="#">Компьютер с мощной графикой для видео и музыки.</a></p>
+                <p class="product-price"><a href="#">Цена: 75000 руб.</a></p>
+            </div>
+            <div class="product complect">
+                <div class="product-image">
+                    <a href="#"><img src="Images/complect_pc_1.png" alt="complect pc 1"></a>
+                </div>
+                <p class="product-title"><a href="#">Видеокарта RTX 4070 Ti</a></p>
+                <p class="product-desc"><a href="#">Высокая производительность для игр и работы с графикой.</a></p>
+                <p class="product-price"><a href="#">Цена: 90000 руб.</a></p>
+            </div>
+            <div class="product complect">
+                <div class="product-image">
+                    <a href="#"><img src="Images/complect_pc_2.png" alt="complect pc 2"></a>
+                </div>
+                <p class="product-title"><a href="#">Монитор 24" IPS 75Hz</a></p>
+                <p class="product-desc"><a href="#">Четкое изображение и комфорт для глаз.</a></p>
+                <p class="product-price"><a href="#">Цена: 18000 руб.</a></p>
+            </div>
+            <div class="product complect">
+                <div class="product-image">
+                    <a href="#"><img src="Images/complect_pc_3.png" alt="complect pc 3"></a>
+                </div>
+                <p class="product-title"><a href="#">Клавиатура + мышь</a></p>
+                <p class="product-desc"><a href="#">Удобный беспроводной комплект.</a></p>
+                <p class="product-price"><a href="#">Цена: 5000 руб.</a></p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="service" class="service">
+        <div class="courosel">
+            <button class="courosel-button prev" onclick="onPrev()">&#10094;</button>
+            <button class="courosel-button next" onclick="onNext()">&#10095;</button>
+            <ul class="slides">
+                <li class="block-item" data-active>
+                    <img class="image-item" src="Images/service1.png" alt="#">
+                    <p class="title-item">Сборка ПК «Под ключ»</p>
+                    <p class="desc-item">
+                        Наши специалисты соберут компьютер с учётом ваших требований и бюджета, 
+                        установят все необходимые драйверы и протестируют систему перед выдачей.
+                    </p>
+                </li>
+                <li class="block-item">
+                    <img class="image-item" src="Images/service2.png" alt="#">
+                    <p class="title-item">Апгрейд и модернизация</p>
+                    <p class="desc-item">
+                        Поможем обновить ваш ПК: заменим процессор, видеокарту, 
+                        оперативную память или другие компоненты, чтобы повысить производительность.
+                    </p>
+                </li>
+                <li class="block-item">
+                    <img class="image-item" src="Images/service3.png" alt="#">
+                    <p class="title-item">Диагностика и ремонт</p>
+                    <p class="desc-item">
+                        Проведём комплексную проверку на наличие неисправностей, 
+                        устраним проблемы с «железом» и программным обеспечением, 
+                        а также заменим вышедшие из строя комплектующие.
+                    </p>
+                </li>
+                <li class="block-item">
+                    <img class="image-item" src="Images/service4.png" alt="#">
+                    <p class="title-item">Настройка и установка ПО</p>
+                    <p class="desc-item">
+                        Установим операционную систему, драйверы, 
+                        антивирус и другое необходимое программное обеспечение для комфортной работы или игр.
+                    </p>
+                </li>
+                <li class="block-item">
+                    <img class="image-item" src="Images/service5.png" alt="#">
+                    <p class="title-item">Консультация и подбор ПК</p>
+                    <p class="desc-item">
+                        Поможем выбрать идеальный компьютер или комплектующие 
+                        в зависимости от ваших задач — будь то работа, гейминг или учёба.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="info" class="info">
+        <div class="block-info">
+            <div class="text-info">
+                QuantumForge — это команда профессионалов, увлечённых технологиями и компьютерами. 
+                Мы предлагаем широкий выбор готовых решений для любых задач: 
+                мощные игровые ПК для максимального погружения в виртуальный мир, 
+                надёжные офисные компьютеры для продуктивной работы, 
+                а также универсальные домашние системы. Кроме того, 
+                у нас вы найдёте комплектующие от ведущих производителей, 
+                чтобы собрать ПК мечты или модернизировать уже существующий.
+            </div>
+            <div class="image-info">
+                <img src="Images/create_pc.png" alt="create pc">
+            </div>
+        </div>
+        <div class="block-info">
+            <div class="image-info">
+                <img src="Images/create_pc2.png" alt="second create pc">
+            </div>
+            <div class="text-info">
+                Мы гарантируем высокое качество, 
+                доступные цены и профессиональную поддержку на каждом этапе — от выбора до постпродажного обслуживания. 
+                Наша цель — обеспечить клиентов лучшими решениями, которые соответствуют их потребностям и бюджету. 
+                Выбирая нас, вы получаете не просто технику, а надёжного партнёра в мире компьютерных технологий!
+            </div>
+        </div>
     </section>
 
     <section id="cont" class="contact">
