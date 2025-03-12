@@ -15,6 +15,17 @@ function filterProducts(category) {
     });
 };
 
+function scrollBlock(id, offset = 50) {
+  document.querySelector('.burger').classList.remove('active');
+  document.querySelector('.menu').classList.remove('open');
+  const target = document.getElementById(id);
+    if (!target) return;
+
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: target.offsetTop - offset, behavior: "smooth" });
+    });
+};
+
 const handleImageChange = (offset) => {
   const activeSlide = document.querySelector("[data-active]")
   const slides = [...document.querySelectorAll(".block-item")]
