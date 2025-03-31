@@ -15,15 +15,22 @@ function filterProducts(category) {
     });
 };
 
-function scrollBlock(id, offset = 50) {
-  document.querySelector('.burger').classList.remove('active');
-  document.querySelector('.menu').classList.remove('open');
-  const target = document.getElementById(id);
-    if (!target) return;
+function scrollBlock(id, offset = 50, page = null) {
+  document.querySelector('.burger')?.classList.remove('active');
+    document.querySelector('.menu')?.classList.remove('open');
 
-    requestAnimationFrame(() => {
-        window.scrollTo({ top: target.offsetTop - offset, behavior: "smooth" });
-    });
+    if (window.location.pathname !== "/index.html" && window.location.pathname !== "/") {
+        // Если мы НЕ на index.html, переходим на него
+        window.location.href = `../index.html#${id}`;
+    } else {
+        // Если уже на index.html, просто скроллим
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: target.offsetTop - offset, behavior: "smooth" });
+        });
+    }
 };
 
 const handleImageChange = (offset) => {

@@ -19,6 +19,30 @@ body{
     }
 }
 
+.account-li a {
+    height: 50px;
+}
+
+.account-li a img {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    border-color: #66fcf1;
+    border-style: solid;
+    border-radius: 50px;
+}
+
+.account-li a {
+    display: flex;
+    gap: 20px;
+}
+
+.account-li a p {
+    display: flex;
+    font-size: 20px;
+    align-items: flex-end;
+}
+
 a {
     color: #66fcf1;
     text-decoration: none;
@@ -54,8 +78,12 @@ a {
 
 .menu {
     display: flex;
+}
+
+.navigate {
+    display: flex;
+    align-items: center;
     gap: 30px;
-    margin-right: 50px;
     font-size: 20px;
 }
 
@@ -68,6 +96,31 @@ a {
 
 .menu li {
     list-style-type: none;
+}
+
+.account {
+    display: flex;
+    gap: 15px;
+    margin-right: 50px;
+}
+
+.account li {
+    list-style: none;
+}
+
+.account button {
+    font-size: 12px;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: #66fcf1;
+    border-width: 4px;
+}
+
+.sign-up, .sign-in {
+    background-color: #1f2833;
+    color: #66fcf1;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .textContact, .listContact{
@@ -123,8 +176,9 @@ a {
 .content{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
 }
 
@@ -328,7 +382,7 @@ a {
         opacity: 0.75;
     }
 
-    .menu a::after{
+    .navigate a::after{
         content: "";
         position: absolute;
         bottom: 0;
@@ -341,13 +395,43 @@ a {
         transition: transform 0.19s ease;
     }
     
-    .menu a:hover::after{
+    .navigate a:hover::after{
         transform: scaleX(1);
         transform-origin: bottom left;
     }
+
+    .sign-in:hover, .sign-up:hover {
+        background-color: #4d637e;
+    }
+
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1050px){
+
+
+    .account {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .account button {
+        font-size: 14px;
+        height: 40px;
+    }
+    
+    .navigate {
+        align-items: center;
+    }
+}
+
+@media (max-width: 1050px){
+    .menu ul {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
 
     .burger { display: flex; }
 
@@ -398,6 +482,10 @@ a {
         row-gap: 1px;
         flex-direction: column;
         text-align: center;
+    }
+
+    .navigate {
+        align-items: normal;
     }
 
     @keyframes burgerAnimation {

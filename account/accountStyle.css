@@ -1,0 +1,241 @@
+body{
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(100deg, #0b0c10, #282a33);
+    background-size: 200% 200%;
+    animation: gradientShift 1s infinite alternate ease-in-out;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.profile-image img {
+    height: 150px;
+    width: 150px;
+    border-color: #66fcf1;
+    border-style: solid;
+    border-radius: 150px;
+    border-width: 5px;
+}
+
+.logout {
+    background-color: #282a33;
+    color: #66fcf1;
+    width: 200px;
+    height: auto;
+    border-color: #66fcf1;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.header{
+    display: flex;
+    position: sticky;
+    width: 100%;
+    background-color: #1f2833;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+}
+
+.header a {
+    color: #66fcf1;
+    text-decoration: none;
+}
+
+.logoText{
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+}
+
+.navigate {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.menu a{
+  color: #66fcf1;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.open {
+    display: flex !important;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    margin-right: 20px;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 18px;
+}
+
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #66fcf1;
+}
+
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #66fcf1;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before { top: 0; }
+
+.burger::after { bottom: 0; }
+
+.burger.active span { transform: scale(0); }
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+.window-profile {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f2833;
+    max-width: 750px;
+    margin: 50px auto;
+    border-radius: 20px;
+    border-color: #66fcf1;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.profile {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-desc {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #66fcf1;
+}
+
+.field p {
+    width: 100%;
+    color: #66fcf1;
+}
+
+.field {
+    display: flex;
+}
+
+.name-field {
+    color: #66fcf1;
+    font-size: 20px;
+}
+
+
+
+@media (hover:hover) {
+
+    .menu a::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #66fcf1;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.19s ease;
+    }
+    
+    .menu a:hover::after{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+}
+
+@media (max-width: 1050px){
+    
+    .navigate {
+        align-items: center;
+    }
+}
+
+@media (max-width: 850px){
+    .menu ul {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 785px) {
+
+    .burger { display: flex; }
+
+    .menu{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: #1f2833;
+        animation: burgerAnimation 0.4s ease-in-out;
+    }
+
+    .header ul {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .logoText {
+        margin-left: 25px;
+        font-size: 30px;
+        padding: 15px 0;
+    }
+
+    .navigate {
+        align-items: normal;
+    }
+
+    @keyframes burgerAnimation {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+}
+
